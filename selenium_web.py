@@ -1,4 +1,7 @@
 from selenium import webdriver
+from pynput.keyboard import Key, Controller
+
+keyboard = Controller()
 
 class infow():
     def __init__(self):
@@ -11,3 +14,5 @@ class infow():
         search = self.driver.find_element_by_xpath('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input')
         search.click()
         search.send_keys(query)
+        keyboard.press(Key.enter)
+        keyboard.release(Key.enter)
